@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block title %}
+X by Moeed
+{% endblock %}
+{% block content %}
+<h1  class="text-center text-white mt-4" >Welcome to X by Moeed</h1>
+<h2>{%if form.instance.pk %}
+     Edit tweet
+     {% else %}
+     <h1 class="btn btn-info"> Create  tweet</h1> 
+      {% endif %}
+    <form method="post" enctype="multipart/form-data" class="form">
+     {% csrf_token %}
+        <button class="btn btn-warning" type="submit">Submit</button>
+        {{ form.as_p }}
+        
+    </form>
+    <a href="{% url "x_list" %}">Back to home</a>
+</h2>
+    {% endblock %}

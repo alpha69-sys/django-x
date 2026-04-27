@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block title %}
+X by Moeed
+{% endblock %}
+{% block content %}
+<h1  class="text-center text-white mt-4" >Are you sure you want to delete it</h1>
+<form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger">Delete</button>
+    <a class="btn btn-success" href="{% url "x_list" %}">Cancel</a>
+</form>
+    {% endblock %}
